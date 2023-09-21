@@ -46,17 +46,19 @@ print(result)
 # nonlocal
 def my_func():
     number = 10
-    print("outer id : ",id(number))
+    print("outer id : ", id(number))
     print("outer", number)
 
     def inner_func():
         nonlocal number
         number = 5
-        print("inner id : ",id(number))
+        print("inner id : ", id(number))
         print("Inner", number)
 
     inner_func()
     print("outer id after running fn : ", id(number))
+
+
 my_func()
 
 
@@ -64,6 +66,7 @@ my_func()
 def generator():
     for i in range(10):
         yield i
+
 
 generator_obj = generator()
 for num in generator_obj:
